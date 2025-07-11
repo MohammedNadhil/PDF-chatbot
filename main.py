@@ -29,7 +29,15 @@ preloaded_db = VectorDB(source_id="preloaded")
 
 @app.on_event("startup")
 async def startup_event():
-    VectorDB(source_id="preloaded").preload_pdfs("preloaded_pdfs")
+    # Don't block startup with PDF processing
+    import asyncio
+    asyncio.create_task(preload_pdfs_async())
+
+async def preload_pdfs_async():
+    try:
+        VectorDB(source_id="preloaded").preload_pdfs("preloaded_pdfs")
+    except Exception as e:
+        print(f"PDF preloading failed: {e}")
 
 @app.get("/")
 async def health_check():
