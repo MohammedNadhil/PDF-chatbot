@@ -31,6 +31,10 @@ preloaded_db = VectorDB(source_id="preloaded")
 async def startup_event():
     VectorDB(source_id="preloaded").preload_pdfs("preloaded_pdfs")
 
+@app.get("/")
+async def health_check():
+    return {"status": "healthy", "message": "TTII Chatbot API is running"}
+
 
 class QuestionRequest(BaseModel):
     question: str
