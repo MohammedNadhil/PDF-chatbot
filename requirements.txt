@@ -1,0 +1,16 @@
+fastapi
+uvicorn
+openai
+PyPDF2
+python-multipart
+pydantic
+aiofiles
+sentence-transformers
+python-dotenv
+PyMuPDF
+langchain
+pytesseract
+numpy
+faiss-cpu
+pillow
+requests
