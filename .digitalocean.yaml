@@ -5,7 +5,8 @@ services:
   github:
     repo: your-username/ttii-chatbot
     branch: main
-  run_command: uvicorn main:app --host 0.0.0.0 --port $PORT
+  run_command: uvicorn main:app --host 0.0.0.0 --port 8080
+  http_port: 8080
   environment_slug: python
   instance_count: 1
   instance_size_slug: basic-xxs
