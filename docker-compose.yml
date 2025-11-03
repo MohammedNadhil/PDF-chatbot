@@ -1,0 +1,11 @@
+services:
+  chatbot:
+    # THIS IS THE KEY DIFFERENCE
+    # This tells Docker: "Build the image from the Dockerfile in this folder"
+    build: .
+    
+    container_name: ttii-chatbot-local
+    
+    ports:
+      # Map your local PC's port 8060 to the container's port 8000
+      - "8080:8000"

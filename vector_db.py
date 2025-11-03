@@ -296,7 +296,7 @@ class VectorDB:
         # FAISS IndexFlatL2 returns squared L2 distances (lower is better)
         # To convert distance to a pseudo-similarity score (higher is better), use:
         top_distance = distances[0][0]
-        similarity_score = 1 / (1 + top_distance)  # Normalize score between 0 and 1
+        similarity_score = float(1 / (1 + top_distance))  # Normalize score between 0 and 1, convert to Python float
 
         context = "\n\n".join(relevant_chunks)
 

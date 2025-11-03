@@ -10,7 +10,7 @@ pydantic
 aiofiles
 python-dotenv
 PyMuPDF
-langchain
+langchain==0.1.0
 pytesseract
 numpy
 faiss-cpu
